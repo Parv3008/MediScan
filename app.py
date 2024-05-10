@@ -39,49 +39,49 @@ if selected == 'Diabetes Prediction':
     st.title('Diabetes Prediction using ML')
 
     # getting the input data from the user
-    col1, col2, col3 = st.columns(3)
+    col1 = st.columns()
 
     with col1:
-        Cholesterol = st.text_input('Number of Cholesterol')
+        Age = st.text_input('Enter your age')
 
-    with col2:
-        Glucose = st.text_input('Glucose Level')
+    # with col2:
+    #     Glucose = st.text_input('Glucose Level')
 
-    with col3:
-        HDL_Chol = st.text_input('HDLChol')
-
-    with col1:
-        Chol_HDL_ratio = st.text_input('Chol_HDLratio')
-
-    with col2:
-        Age = st.text_input('Age')
-
-    with col3:
-        Gender = st.text_input('Gender')
+    # with col3:
+    #     HDL_Chol = st.text_input('HDLChol')
 
     with col1:
-        Height = st.text_input('Height')
+        Gender = st.text_input('Enter your gender')
 
-    with col2:
-        Weight = st.text_input('Weight')
+    # with col2:
+    #     Age = st.text_input('Age')
 
-    with col3:
-        BMI = st.text_input('BMI')
-
-    with col1:
-        SystolicBP = st.text_input('Systolic BP')
-
-    with col2:
-        DiastolicBP = st.text_input('Diastolic BP')
-
-    with col3:
-        waist = st.text_input('waist')
+    # with col3:
+    #     Gender = st.text_input('Gender')
 
     with col1:
-        hip = st.text_input('hip')
+        FPG = st.text_input('Enter your "Fasting Plasma Glucose"')
 
-    with col2:
-        Waist_hip_ratio = st.text_input('Waist/hip ratio')
+    # with col2:
+    #     Weight = st.text_input('Weight')
+
+    # with col3:
+    #     BMI = st.text_input('BMI')
+
+    with col1:
+        P2PG = st.text_input('Enter your "Post Prandial 2hrs Plasma Glucose')
+
+    # with col2:
+    #     DiastolicBP = st.text_input('Diastolic BP')
+
+    # with col3:
+    #     waist = st.text_input('waist')
+
+    # with col1:
+    #     hip = st.text_input('hip')
+
+    # with col2:
+    #     Waist_hip_ratio = st.text_input('Waist/hip ratio')
 
 
 
@@ -92,16 +92,16 @@ if selected == 'Diabetes Prediction':
 
     if st.button('Diabetes Test Result'):
 
-        user_input = [Cholesterol,Glucose,HDL_Chol,Chol_HDL_ratio,Age,Gender,Height,Weight,BMI,SystolicBP, DiastolicBP,waist,hip,Waist_hip_ratio]
+        user_input = [Age,Gender,FPG,P2PG]
 
         user_input = [float(x) for x in user_input]
 
         diab_prediction = diabetes_model.predict([user_input])
 
         if diab_prediction[0] == 1:
-            diab_diagnosis = 'The person is not diabetic'
+            diab_diagnosis = 'As per your blood report you are not diabetic person'
         else:
-            diab_diagnosis = 'The person is  diabetic'
+            diab_diagnosis = 'As per your blood report you are diabetic person, Please consult the doctor'
 
     st.success(diab_diagnosis)
 
