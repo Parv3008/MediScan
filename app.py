@@ -39,7 +39,7 @@ if selected == 'Diabetes Prediction':
     st.title('Diabetes Prediction using ML')
 
     # getting the input data from the user
-    col1 = st.columns()
+    col1 = st.columns(1)
 
     with col1:
         Age = st.text_input('Enter your age')
