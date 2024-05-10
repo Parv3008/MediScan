@@ -39,7 +39,7 @@ if selected == 'Diabetes Prediction':
     st.title('Diabetes Prediction using ML')
 
     # getting the input data from the user
-    col1 = st.columns(1)
+    col1, col2 = st.columns(2)
 
     with col1:
         Age = st.text_input('Enter your age')
@@ -50,7 +50,7 @@ if selected == 'Diabetes Prediction':
     # with col3:
     #     HDL_Chol = st.text_input('HDLChol')
 
-    with col1:
+    with col2:
         Gender = st.text_input('Enter your gender')
 
     # with col2:
@@ -68,7 +68,7 @@ if selected == 'Diabetes Prediction':
     # with col3:
     #     BMI = st.text_input('BMI')
 
-    with col1:
+    with col2:
         P2PG = st.text_input('Enter your "Post Prandial 2hrs Plasma Glucose')
 
     # with col2:
