@@ -98,7 +98,7 @@ if selected == 'Diabetes Prediction':
 
         diab_prediction = diabetes_model.predict([user_input])
 
-        if diab_prediction[0] == 0:
+        if diab_prediction[0] == 'Normal':
             diab_diagnosis = 'As per your blood report you are not diabetic person'
         else:
             diab_diagnosis = 'As per your blood report you are diabetic person, Please consult the doctor'
