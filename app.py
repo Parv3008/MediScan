@@ -51,7 +51,7 @@ if selected == 'Diabetes Prediction':
     #     HDL_Chol = st.text_input('HDLChol')
 
     with col2:
-        Gender = st.text_input('Enter your gender')
+        Gender = st.text_input('Enter your gender        (Male=0, Female=1))
 
     # with col2:
     #     Age = st.text_input('Age')
